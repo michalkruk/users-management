@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 import CardList from "./CardList";
-import { users } from "./users";
 import SearchBox from "./SearchBox";
+import "./App.css";
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
-            users: users,
+            users: [],
             searchfield: ""
         };
+    }
+
+    componentDidMount() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => response.json())
+            .then(users => this.setState({ users: users }));
     }
 
     onSearchChange = e => {
@@ -24,7 +30,7 @@ class App extends Component {
         );
         return (
             <div className="tc">
-                <h1>Users list</h1>
+                <h1 className="title">Users list</h1>
                 <SearchBox searchChange={this.onSearchChange} />
                 <CardList users={filteredUsers} />
             </div>
