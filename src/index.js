@@ -3,9 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import tachyons from "tachyons";
 import * as serviceWorker from "./serviceWorker";
-import Card from "./Card.js";
+import { users } from "./users";
+import App from "./App.js";
+import CardList from "./CardList.js";
 
-ReactDOM.render(<Card />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
