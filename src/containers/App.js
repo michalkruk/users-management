@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import CardList from "./CardList";
-import SearchBox from "./SearchBox";
+import CardList from "../components/CardList";
+import SearchBox from "../components/SearchBox";
 import "./App.css";
+import Scroll from "../components/Scroll.js";
 
 class App extends Component {
     constructor() {
@@ -23,16 +24,19 @@ class App extends Component {
     };
 
     render() {
-        const filteredUsers = this.state.users.filter(users =>
-            users.name
+        const { users, searchfield } = this.state;
+        const filteredUsers = users.filter(user =>
+            user.name
                 .toLocaleLowerCase()
-                .includes(this.state.searchfield.toLocaleLowerCase())
+                .includes(searchfield.toLocaleLowerCase())
         );
         return (
             <div className="tc">
                 <h1 className="title">Users list</h1>
                 <SearchBox searchChange={this.onSearchChange} />
-                <CardList users={filteredUsers} />
+                <Scroll>
+                    <CardList users={filteredUsers} />
+                </Scroll>
             </div>
         );
     }

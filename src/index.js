@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import tachyons from "tachyons";
 import * as serviceWorker from "./serviceWorker";
-import App from "./App.js";
-import CardList from "./CardList.js";
+import App from "./containers/App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
