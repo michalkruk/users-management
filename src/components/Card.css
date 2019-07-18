@@ -3,4 +3,5 @@ h1 {
 }
 .card {
     max-width: 50vh;
+    background-color: rgb(209, 209, 209);
 }

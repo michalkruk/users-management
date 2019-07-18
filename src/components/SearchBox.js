@@ -5,7 +5,7 @@ const SearchBox = ({ searchChange }) => {
         <div className="tc pa3">
             <input
                 type="searchbox"
-                placeholder="sarch users"
+                placeholder="search users"
                 onChange={searchChange}
             />
         </div>
